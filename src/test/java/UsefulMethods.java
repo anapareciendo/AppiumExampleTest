@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MetodosUtiles extends DriverManager{
+public class UsefulMethods extends DriverManager{
 
     /**
      * Wait for visible.

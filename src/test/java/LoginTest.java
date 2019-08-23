@@ -4,10 +4,10 @@ import io.appium.java_client.touch.offset.PointOption;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LoginTest extends MetodosUtiles{
+public class LoginTest extends UsefulMethods{
 
     @Test
-    public void loginCorrecto() throws InterruptedException {
+    public void loginOK() throws InterruptedException {
 
         Thread.sleep(5000);
         permitirGPS();
@@ -40,7 +40,7 @@ public class LoginTest extends MetodosUtiles{
     }
 
     @Test
-    public void loginIncorrecto() throws InterruptedException {
+    public void loginKO() throws InterruptedException {
 
         /*Llamamos al método para aceptar el uso del GPS*/
         permitirGPS();
