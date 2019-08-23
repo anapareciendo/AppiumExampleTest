@@ -1,3 +1,3 @@
 # Default ignored files
 /workspace.xml
-/AppiumExampleTest/src/test/java/DriverManager.java
+/src/test/java/DriverManager.java
