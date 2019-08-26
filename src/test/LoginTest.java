@@ -1,6 +1,4 @@
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.offset.PointOption;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,8 +7,7 @@ public class LoginTest extends UsefulMethods{
     @Test
     public void loginOK() throws InterruptedException {
 
-        Thread.sleep(5000);
-        permitirGPS();
+        allowGPS();
 
         /*Usando RE para encontrar el botón Tú*/
         driver.findElementByXPath("(//android.widget.ImageView[contains(@resource-id, 'mainViewPagerTabIcon')])[5]").click();
@@ -32,7 +29,7 @@ public class LoginTest extends UsefulMethods{
         /*Intenta ejecutar el find y sino captura excepcion*/
         try {
             Assert.assertTrue("Test KO.", driver.findElementById("toolbarUserLastName").isDisplayed());
-            desloguear();
+            logout();
         } catch(Exception e) {
             Assert.fail("Something went wrong: " + e);
         }
@@ -43,7 +40,7 @@ public class LoginTest extends UsefulMethods{
     public void loginKO() throws InterruptedException {
 
         /*Llamamos al método para aceptar el uso del GPS*/
-        permitirGPS();
+        allowGPS();
 
         /*Usando RE para encontrar el botón Tú*/
         driver.findElementByXPath("(//android.widget.ImageView[contains(@resource-id, 'mainViewPagerTabIcon')])[5]").click();

@@ -41,7 +41,7 @@ public class UsefulMethods extends DriverManager{
     }
 
     /** Metodo para pulsar en elemento "Permitir" acceso a ubicación */
-    public void permitirGPS() throws InterruptedException{
+    public void allowGPS() throws InterruptedException{
 
         MobileElement aceptarGPS = (MobileElement) driver.findElementByXPath("//android.widget.Button[2]");
         waitForClick(aceptarGPS, 10);
@@ -55,7 +55,7 @@ public class UsefulMethods extends DriverManager{
     }
 
     /** Método para desloguear */
-    public void desloguear() throws InterruptedException {
+    public void logout() throws InterruptedException {
 
         /*Pulsar en el elemento "Tú" del menú*/
         driver.findElementByXPath("(//android.widget.ImageView[contains(@resource-id, 'mainViewPagerTabIcon')])[5]").click();

@@ -15,7 +15,7 @@ public class DriverManager {
     public void setUp() throws MalformedURLException {
         /*Configuramos las capabilities*/
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("app", "C:\\Users\\araparicio\\Documents\\Cursos atSistemas\\Automatizacion\\LM_apks\\LEROY MERLIN_com.iphonedroid.leroymerlin.pre.apk");
+        desiredCapabilities.setCapability("app", "C:\\Users\\araparicio\\Desktop\\QA - Leroy\\Workspace\\AppiumExampleTest\\src\\resources\\LEROY_MERLIN_pre.apk");
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("deviceName", "AndroidDevice");
         desiredCapabilities.setCapability("appPackage", "com.iphonedroid.leroymerlin.pre");
