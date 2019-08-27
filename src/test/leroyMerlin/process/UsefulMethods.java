@@ -1,3 +1,4 @@
+package leroyMerlin.process;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
@@ -43,13 +44,12 @@ public class UsefulMethods extends DriverManager{
     /** Metodo para pulsar en elemento "Permitir" acceso a ubicación */
     public void allowGPS() throws InterruptedException{
 
-        MobileElement aceptarGPS = (MobileElement) driver.findElementByXPath("//android.widget.Button[2]");
-        waitForClick(aceptarGPS, 10);
-
         try{
-            driver.findElementByXPath("//android.widget.Button[2]").click();
+            driver.findElementById("//android.widget.Button[2]").click();
+            Thread.sleep(5000);
         }catch (Exception e){
             Assert.fail("Something went wrong: " + e);
+
         }
 
     }
