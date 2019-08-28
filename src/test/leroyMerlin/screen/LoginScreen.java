@@ -1,47 +1,56 @@
 package leroyMerlin.screen;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import leroyMerlin.elements.LoginElements;
-import leroyMerlin.utilities.*;
+import leroyMerlin.driverProcess.DriverManager;
 
 
 public class LoginScreen extends LoginElements {
+    private AppiumDriver driver;
 
-    Actions actions = new Actions();
+    public LoginScreen(DriverManager driver) {
+        super(driver);
+        this.driver = driver.getDriver();
+    }
 
     public void clickBotonTu(){
 
-        actions.click((MobileElement) driver.findElementByXPath(botonTu));
+        click((MobileElement) driver.findElementByXPath(botonTu));
 
     }
 
     public void clickBotonIniciarSesion(){
 
-        actions.click((MobileElement) driver.findElementById(botonIniciarSesion));
+        click((MobileElement) driver.findElementById(botonIniciarSesion));
     }
 
     public void clickEmailInput(){
 
-        actions.click((MobileElement) driver.findElementById(emailInput));
+        click((MobileElement) driver.findElementById(emailInput));
     }
 
     public void sendKeysEmailInput(String keys){
 
-        actions.sendKeys((MobileElement) driver.findElementById(emailInput), keys);
+        sendKeys((MobileElement) driver.findElementById(emailInput), keys);
     }
 
     public void clickPasswordInput(){
 
-        actions.click((MobileElement) driver.findElementById(passwordInput));
+        click((MobileElement) driver.findElementById(passwordInput));
     }
 
     public void sendKeysPasswordInput(String keys){
 
-        actions.sendKeys((MobileElement) driver.findElementById(passwordInput), keys);
+        sendKeys((MobileElement) driver.findElementById(passwordInput), keys);
     }
 
     public void clickBotonEntrar(){
 
-        actions.click((MobileElement) driver.findElementById(botonEntrar));
+        click((MobileElement) driver.findElementById(botonEntrar));
+    }
+
+    public boolean verifyBarraUsuario(){
+        return isDisplayed((MobileElement) driver.findElementById(barraUsuario));
     }
 }

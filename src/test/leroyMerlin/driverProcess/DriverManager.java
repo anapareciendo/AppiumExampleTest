@@ -1,26 +1,24 @@
-package leroyMerlin.process;
+package leroyMerlin.driverProcess;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import javax.xml.ws.Service;
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
 
-    static public AndroidDriver driver;
+    public AndroidDriver driver;
+    protected AppiumDriverLocalService service;
 
-    @Before
-    public void setUp() throws MalformedURLException {
+    public DriverManager()  {
 
         /*Configuramos las capabilities*/
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        File app = new File("src/test//leroyMerlin/resources", "LEROY_MERLIN_pre.apk");
+        File app = new File("src/test/resources", "LEROY_MERLIN_pre.apk");
         desiredCapabilities.setCapability("app", app.getAbsolutePath());
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("deviceName", "AndroidDevice");
@@ -29,25 +27,30 @@ public class DriverManager {
         desiredCapabilities.setCapability("noReset", "false");
 
         /*Indicamos la url de nuestro servidor appium*/
-        URL remoteUrl = new URL("http://localhost:4723/wd/hub");
+        //URL remoteUrl = new URL("http://localhost:4723/wd/hub");
 
-        /*Iniciamos Appium*/
-
-        /**
+        /*Iniciamos el servicio de Appium*/
         AppiumServiceBuilder builder = new AppiumServiceBuilder().withCapabilities(desiredCapabilities)
-                .withIPAddress(appiummIP)
-                .usingPort(Integer.valueOf(4723));
+                .withIPAddress("127.0.0.1")
+                .usingPort(4723);
         service = builder.build();
         service.start();
-         */
 
         /*Creamos el driver pasandole la url y las capabilities*/
-        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
+        driver = new AndroidDriver(service.getUrl(), desiredCapabilities);
+
+        /*Esperamos a la generacion del driver*/
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
-    @After
-    public void tearDown() {
+
+    @SuppressWarnings("rawtypes")
+    public AppiumDriver getDriver() {
+        return driver;
+    }
+
+    public void quitDriver() {
         driver.quit();
     }
 }
