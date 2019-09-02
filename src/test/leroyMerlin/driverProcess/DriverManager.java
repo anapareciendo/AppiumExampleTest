@@ -18,13 +18,15 @@ public class DriverManager {
 
         /*Configuramos las capabilities*/
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        File app = new File("src/test/resources", "LEROY_MERLIN_pre.apk");
+        File app = new File("src/test/leroyMerlin/resources", "LEROY_MERLIN_pre.apk");
         desiredCapabilities.setCapability("app", app.getAbsolutePath());
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("deviceName", "AndroidDevice");
         desiredCapabilities.setCapability("appPackage", "com.iphonedroid.leroymerlin.pre");
         desiredCapabilities.setCapability("appWaitActivity", "com.iphonedroid.leroymerlin.screen.main.MainActivity");
         desiredCapabilities.setCapability("noReset", "false");
+        desiredCapabilities.setCapability("unicodeKeyboard", "true");
+        desiredCapabilities.setCapability("resetKeyboard", "true");
 
         /*Indicamos la url de nuestro servidor appium*/
         //URL remoteUrl = new URL("http://localhost:4723/wd/hub");

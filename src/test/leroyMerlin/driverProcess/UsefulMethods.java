@@ -6,6 +6,8 @@ import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static io.appium.java_client.touch.offset.ElementOption.element;
+
 public class UsefulMethods {
 
     private AppiumDriver driver;
@@ -40,6 +42,19 @@ public class UsefulMethods {
         } catch (Exception e){
             return false;
         }
+    }
+
+    protected void scroll(MobileElement element, Integer x, Integer y){
+
+        (new TouchAction(driver))
+                .longPress(element(element))
+                .waitAction()
+                .moveTo(PointOption.point(x,y))
+                .release()
+                .perform();
+
+        System.out.println("[SCROLL] [PRESS: " + element.toString() + "] [" + "MOVE TO: " + x + "," + y + "]");
+
     }
 
 

@@ -46,9 +46,9 @@ public class LoginTestOK {
         try {
             Assert.assertTrue("Test KO.", loginScreen.verifyBarraUsuario());
             actions.logout();
-        } catch(Exception e) {
-            Assert.fail("Something went wrong: " + e);
-        }
+       } catch(Exception e) {
+           Assert.fail("Something went wrong: " + e);
+       }
 
     }
 
