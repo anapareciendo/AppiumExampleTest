@@ -44,7 +44,7 @@ public class LoginTestKO {
 
         /*Intenta ejecutar el find y sino captura excepcion*/
         try {
-            Assert.assertTrue("Test KO.", loginScreen.verifyBarraUsuario());
+            Assert.assertTrue("Test OK", loginScreen.verifyBotonEntrar());
         } catch(Exception e) {
             Assert.fail("Something went wrong: " + e);
         }

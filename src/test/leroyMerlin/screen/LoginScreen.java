@@ -50,7 +50,7 @@ public class LoginScreen extends LoginElements {
         click((MobileElement) driver.findElementById(botonEntrar));
     }
 
-    public boolean verifyBarraUsuario(){
-        return isDisplayed((MobileElement) driver.findElementById(barraUsuario));
+    public boolean verifyBotonEntrar(){
+        return isDisplayed((MobileElement) driver.findElementById(botonEntrar));
     }
 }
