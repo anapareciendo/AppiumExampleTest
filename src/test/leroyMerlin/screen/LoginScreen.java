@@ -53,4 +53,9 @@ public class LoginScreen extends LoginElements {
     public boolean verifyBotonEntrar(){
         return isDisplayed((MobileElement) driver.findElementById(botonEntrar));
     }
+
+    public boolean verifyFirstName(){
+        return isDisplayed((MobileElement) driver.findElementById(firstName));
+    }
+
 }

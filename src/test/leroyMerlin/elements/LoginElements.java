@@ -13,6 +13,6 @@ public class LoginElements extends UsefulMethods {
     protected String emailInput = "loginUsernameEditText";
     protected String passwordInput = "loginPasswordEditText";
     protected String botonEntrar = "button";
-    protected String barraUsuario = "toolbarUserFirstName";
+    protected String firstName = "toolbarUserFirstName";
 
 }

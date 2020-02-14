@@ -43,11 +43,9 @@ public class LoginTestKO {
         Thread.sleep(5000);
 
         /*Intenta ejecutar el find y sino captura excepcion*/
-        try {
-            Assert.assertTrue("Test OK", loginScreen.verifyBotonEntrar());
-        } catch(Exception e) {
-            Assert.fail("Something went wrong: " + e);
-        }
+
+        Assert.assertTrue("No se muestra el botón entrar.", loginScreen.verifyBotonEntrar());
+
 
     }
 
