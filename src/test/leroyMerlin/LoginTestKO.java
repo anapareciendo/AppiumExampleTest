@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
+
 public class LoginTestKO {
     private static DriverManager driverManager;
 
@@ -50,7 +52,7 @@ public class LoginTestKO {
     }
 
     @After
-    public void endDriver()  {
+    public void endDriver() throws IOException {
         driverManager.quitDriver();
     }
 

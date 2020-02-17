@@ -7,6 +7,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
@@ -52,7 +53,20 @@ public class DriverManager {
         return driver;
     }
 
-    public void quitDriver() {
-        driver.quit();
+    public void quitDriver() throws IOException {
+
+        if (driver != null)
+        {
+            String bundleID = null;
+            bundleID = (String) driver.getCapabilities().getCapability("appPackage");
+            if (bundleID != null) {
+                driver.removeApp(bundleID);
+                System.out.println("[Driver] Remove APP Appium");
+            }
+
+            driver.quit();
+        }
+        Runtime.getRuntime().exec("adb kill-server");
+        Runtime.getRuntime().exec("taskkill /F /IM adb.exe");
     }
 }

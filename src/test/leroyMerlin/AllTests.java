@@ -8,6 +8,7 @@ import org.junit.runners.Suite;
 
         LoginTestOK.class,
         LoginTestKO.class,
+        BuscadorOK.class,
 
 })
 

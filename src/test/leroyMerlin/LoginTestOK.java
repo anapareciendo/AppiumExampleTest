@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
+
 public class LoginTestOK {
     private static DriverManager driverManager;
 
@@ -42,14 +44,14 @@ public class LoginTestOK {
 
         Thread.sleep(5000);
 
-        /*Intenta ejecutar el find y sino captura excepcion*/
+        /*Intenta ejecutar el nombre del usuario*/
         Assert.assertTrue("No se muestra el nombre del usuario.", loginScreen.verifyFirstName());
         actions.logout();
 
     }
 
     @After
-    public void endDriver()  {
+    public void endDriver() throws IOException {
         driverManager.quitDriver();
     }
 
