@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="General Test Suite">
+    <test name="testing">
+        <classes>
+            <class name="leroyMerlin.LoginTestOK" />
+            <class name="leroyMerlin.LoginTestKO" />
+            <class name="leroyMerlin.BuscadorOK" />
+            <class name="leroyMerlin.BuscadorKO" />
+        </classes>
+    </test>
+</suite>

@@ -2,6 +2,7 @@ package leroyMerlin.screen;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import leroyMerlin.elements.LoginElements;
 import leroyMerlin.driverProcess.DriverManager;
 
@@ -9,9 +10,9 @@ import leroyMerlin.driverProcess.DriverManager;
 public class LoginScreen extends LoginElements {
     private AppiumDriver driver;
 
-    public LoginScreen(DriverManager driver) {
+    public LoginScreen(AndroidDriver driver) {
         super(driver);
-        this.driver = driver.getDriver();
+        this.driver = driver;
     }
 
     public void clickBotonTu(){

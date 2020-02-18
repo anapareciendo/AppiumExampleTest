@@ -1,10 +1,11 @@
 package leroyMerlin.elements;
+import io.appium.java_client.android.AndroidDriver;
 import leroyMerlin.driverProcess.DriverManager;
 import leroyMerlin.driverProcess.UsefulMethods;
 
 public class LoginElements extends UsefulMethods {
 
-    public LoginElements(DriverManager driver) {
+    public LoginElements(AndroidDriver driver) {
         super(driver);
     }
 

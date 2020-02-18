@@ -3,26 +3,17 @@ package leroyMerlin;
 import leroyMerlin.driverProcess.DriverManager;
 import leroyMerlin.process.Actions;
 import leroyMerlin.screen.LoginScreen;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import java.io.IOException;
 
-public class LoginTestKO {
-    private static DriverManager driverManager;
-
-    @Before
-    public void startDriver()  {
-        driverManager = new DriverManager();
-    }
+public class LoginTestKO extends DriverManager{
 
     @Test
     public void loginKO() throws InterruptedException {
 
-        Actions actions = new Actions(driverManager);
-        LoginScreen loginScreen = new LoginScreen(driverManager);
+        Actions actions = new Actions(driver);
+        LoginScreen loginScreen = new LoginScreen(driver);
 
         /*Click permitir acceso al GPS*/
         actions.allowGPS();
@@ -49,11 +40,6 @@ public class LoginTestKO {
         Assert.assertTrue("No se muestra el botón entrar.", loginScreen.verifyBotonEntrar());
 
 
-    }
-
-    @After
-    public void endDriver() throws IOException {
-        driverManager.quitDriver();
     }
 
 }

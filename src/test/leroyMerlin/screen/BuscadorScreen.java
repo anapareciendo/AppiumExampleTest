@@ -2,6 +2,7 @@ package leroyMerlin.screen;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import leroyMerlin.driverProcess.DriverManager;
 import leroyMerlin.elements.BuscadorElements;
 import org.openqa.selenium.Dimension;
@@ -12,9 +13,9 @@ public class BuscadorScreen extends BuscadorElements {
 
     private AppiumDriver driver;
 
-    public BuscadorScreen(DriverManager driver) {
+    public BuscadorScreen(AndroidDriver driver) {
         super(driver);
-        this.driver = driver.getDriver();
+        this.driver = driver;
     }
 
     public void clickBarraBusqueda(){

@@ -1,11 +1,12 @@
 package leroyMerlin.elements;
 
+import io.appium.java_client.android.AndroidDriver;
 import leroyMerlin.driverProcess.DriverManager;
 import leroyMerlin.driverProcess.UsefulMethods;
 
 public class BuscadorElements extends UsefulMethods {
 
-    public BuscadorElements(DriverManager driver) {
+    public BuscadorElements(AndroidDriver driver) {
         super(driver);
     }
 

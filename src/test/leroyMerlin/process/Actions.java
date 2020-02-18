@@ -3,6 +3,7 @@ package leroyMerlin.process;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 import leroyMerlin.driverProcess.DriverManager;
 import leroyMerlin.elements.LoginElements;
@@ -16,9 +17,9 @@ import static io.appium.java_client.touch.offset.ElementOption.element;
 public class Actions extends LoginElements {
     private AppiumDriver driver;
 
-    public Actions(DriverManager driver) {
+    public Actions(AndroidDriver driver) {
         super(driver);
-        this.driver = driver.getDriver();
+        this.driver = driver;
     }
 
     /** Metodo para pulsar en elemento "Permitir" acceso a ubicación */

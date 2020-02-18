@@ -5,6 +5,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,10 +14,11 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
 
-    public AndroidDriver driver;
+    public static AndroidDriver driver;
     protected AppiumDriverLocalService service;
 
-    public DriverManager()  {
+    @BeforeClass
+    public void DriverManager()  {
 
         /*Configuramos las capabilities*/
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -53,6 +56,7 @@ public class DriverManager {
         return driver;
     }
 
+    @AfterClass
     public void quitDriver() throws IOException {
 
         if (driver != null)

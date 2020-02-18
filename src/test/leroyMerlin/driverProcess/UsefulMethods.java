@@ -2,6 +2,7 @@ package leroyMerlin.driverProcess;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,8 +13,8 @@ public class UsefulMethods {
 
     private AppiumDriver driver;
 
-    public UsefulMethods(DriverManager driver) {
-        this.driver = driver.getDriver();
+    public UsefulMethods(AndroidDriver driver) {
+        this.driver = driver;
     }
 
 
@@ -64,6 +65,7 @@ public class UsefulMethods {
      * @param element  the element
      * @param waitTime the wait time
      */
+    /*
     public void waitForVisible(MobileElement element, int waitTime) {
         long startTime = System.currentTimeMillis();
         try {
@@ -74,12 +76,15 @@ public class UsefulMethods {
         long totalTime = endTime - startTime;
         System.out.println("[WAIT_VISIBLE] [" + element.toString() + "] [" + totalTime + "]");
     }
+    */
+
 
     /**
      * Wait for click.
      *  @param element  the element
      * @param waitTime the wait time
      */
+    /*
     public void waitForClick(MobileElement element, int waitTime) {
         long startTime = System.currentTimeMillis();
         try {
@@ -90,6 +95,6 @@ public class UsefulMethods {
         long totalTime = endTime - startTime;
         System.out.println("[WAIT_CLICK] [" + element.toString() + "] [" + totalTime + "]");
     }
-
+    */
 
 }
