@@ -64,13 +64,13 @@ public class DriverManager {
             driver.quit();
             System.out.println("[Driver] Quit driver Appium");
         }
-        /*Si el servidor esta corriendo lo paramos*/
+        /*Si el servicio esta corriendo lo paramos*/
         if(service.isRunning()){
             service.stop();
             System.out.println("[Service] Stop service Appium");
         }
 
-        /*Comando ejecutados en consola para limpiar cualquier tarea en segundo plano*/
+        /*Comandos ejecutados en consola para limpiar cualquier tarea en segundo plano*/
         Runtime.getRuntime().exec("adb kill-server");
         Runtime.getRuntime().exec("taskkill /F /IM adb.exe");
     }
