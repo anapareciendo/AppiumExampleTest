@@ -10,6 +10,7 @@
 
     <properties>
         <testng.version>7.0.0</testng.version>
+        <java.client.version>7.3.0</java.client.version>
     </properties>
 
 
@@ -18,7 +19,7 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.1.0</version>
+            <version>${java.client.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -28,7 +29,6 @@
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>

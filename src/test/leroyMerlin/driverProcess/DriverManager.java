@@ -59,17 +59,18 @@ public class DriverManager {
     @AfterClass
     public void quitDriver() throws IOException {
 
-        if (driver != null)
-        {
-            String bundleID = null;
-            bundleID = (String) driver.getCapabilities().getCapability("appPackage");
-            if (bundleID != null) {
-                driver.removeApp(bundleID);
-                System.out.println("[Driver] Remove APP Appium");
-            }
-
+        /*Si el driver existe lo eliminamos*/
+        if (driver != null) {
             driver.quit();
+            System.out.println("[Driver] Quit driver Appium");
         }
+        /*Si el servidor esta corriendo lo paramos*/
+        if(service.isRunning()){
+            service.stop();
+            System.out.println("[Service] Stop service Appium");
+        }
+
+        /*Comando ejecutados en consola para limpiar cualquier tarea en segundo plano*/
         Runtime.getRuntime().exec("adb kill-server");
         Runtime.getRuntime().exec("taskkill /F /IM adb.exe");
     }
